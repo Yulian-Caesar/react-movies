@@ -16,7 +16,25 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
+            {
+                test: /\.scss$/,
+                use: [
+                    { loader: 'style-loader'},
+                    { loader: 'css-loader' },
+                    { loader: 'sass-loader' }
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.json', '.css', '.scss', '.wasm'],
+        alias: {
+            ui: path.resolve(__dirname, 'src/ui/index'),
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({
