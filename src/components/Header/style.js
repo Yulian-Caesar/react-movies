@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Theme } from "ui";
+import { Colors } from "ui";
 import headerBg from '../../images/headerBg.jpg';
 
 export const HeaderContainer = styled.header`
@@ -26,7 +26,7 @@ export const HeaderTitle = styled.h1`
     font-size: 40px;
     text-transform: uppercase;
     font-weight: 300;
-    color: ${Theme.colors.white}; 
+    color: ${Colors.white}; 
     grid-area: title;
 `
 

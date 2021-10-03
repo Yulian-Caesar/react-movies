@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Theme } from "ui"
+import { Colors } from "../index"
 
 const ButtonContainer = styled.button`
     border-radius: 4px;
@@ -10,20 +10,20 @@ const ButtonContainer = styled.button`
     border: 2px solid;
 
     ${props => props.type === 'default' && `
-        background: ${Theme.colors.accent};
-        color: ${Theme.colors.white};
-        border-color: ${Theme.colors.accent};
+        background: ${Colors.accent};
+        color: ${Colors.white};
+        border-color: ${Colors.accent};
     `}
 
     ${props => props.type === 'outline' && `
-        background: ${Theme.colors.black};
-        color: ${Theme.colors.accent};
-        border-color: ${Theme.colors.accent};
+        background: ${Colors.black};
+        color: ${Colors.accent};
+        border-color: ${Colors.accent};
     `}
 
     ${props => props.type === 'light' && `
         background: #d6d6d6;
-        color: ${Theme.colors.accent};
+        color: ${Colors.accent};
         border-color: #d6d6d6;
     `}
 `

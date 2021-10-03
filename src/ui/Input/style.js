@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Theme } from "ui"
 
 const InputContainer = styled.input`
     border-radius: 4px;

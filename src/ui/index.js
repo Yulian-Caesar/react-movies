@@ -1,13 +1,21 @@
 import Button from "./Button/index";
 import Input from "./Input/index";
-import Theme from "./Global/Theme";
-import Global from "./Global/Global";
+import Colors from "./Theme/Colors";
+import Global from "./Theme/Global";
 import Logo from "./Logo/index";
+import MyModal from "./MyModal/index";
+import Textarea from "./Textarea/index";
+import InputDate from "./InputDate/index";
+import MySelect from "./MySelect/index";
 
 export {
     Button,
     Input,
-    Logo,
+    Colors,
     Global,
-    Theme
+    Logo,
+    MyModal,
+    Textarea,
+    InputDate,
+    MySelect
 }
