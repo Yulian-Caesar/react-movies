@@ -1,6 +1,6 @@
 import React from "react";
 import { HeaderContainer, HeaderTop, HeaderForm, HeaderTitle } from "./style"
-import { Button, Input, Logo, MyModal} from "ui";
+import { Button, Input, Logo, Modal, ModalAdd } from "ui";
 
 
 function Header({ isPopupOpen, setIsPopupOpen }) {
@@ -13,7 +13,9 @@ function Header({ isPopupOpen, setIsPopupOpen }) {
 			<HeaderTop>
 				<Logo />
 				<Button onClick={showPopup} value="+ add movie" type="light" />
-				<MyModal isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen}/>
+				<Modal isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen}>
+					<ModalAdd />
+				</Modal>
 			</HeaderTop>
 			<HeaderForm>
 				<HeaderTitle>FIND YOUR MOViE</HeaderTitle>

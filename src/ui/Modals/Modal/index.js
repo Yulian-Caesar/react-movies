@@ -1,9 +1,7 @@
 import React from 'react';
-import Modal from 'react-modal';
-import { Colors, Button, Textarea, InputDate, MySelect } from '../index';
-import { ModalCloseButton, ModalTitle, ModalButtons } from './style';
-
-const Yulik = Modal;
+import { default as ModalContainer } from 'react-modal';
+import { Colors } from 'ui';
+import { ModalCloseButton } from '../style';
 
 const customStyles = {
     content: {
@@ -16,40 +14,36 @@ const customStyles = {
         background: `${Colors.black}`,
         borderRadius: 'none',
         border: 'none',
-        padding: '60px'
+        padding: '60px',
+        width: '100%',
+        maxWidth: '976px',
+        color: `${Colors.white}`
     },
     overlay: {
         backgroundColor: 'rgba(35, 35, 35, 0.8)',
     }
 };
 
-Modal.setAppElement('body');
+ModalContainer.setAppElement('body');
 
 
-const MyModal = ({ isPopupOpen, setIsPopupOpen }) => {
+const Modal = ({ isPopupOpen, setIsPopupOpen, children }) => {
 
     const closeModal = () => setIsPopupOpen(!isPopupOpen);
     
 
     return (
         <>  
-            <Modal
+            <ModalContainer
                 isOpen={isPopupOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
             >
                 <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
-                <ModalTitle>ADD MOVIE</ModalTitle>
-                <InputDate />
-                <Textarea placeholder="Movie description" />
-                <MySelect />
-                <ModalButtons>
-                    <Button value="reset" type="outline" />
-                    <Button value="submit" type="default" />
-                </ModalButtons>
-            </Modal>
+                {children}
+            </ModalContainer>
         </>
     );
 }
 
-export default MyModal;
+export default Modal;

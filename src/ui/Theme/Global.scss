@@ -79,7 +79,8 @@ time,
 mark,
 audio,
 video,
-input {
+input,
+select {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -152,6 +153,10 @@ button {
 
 * {
 	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
 }
 
 #app {

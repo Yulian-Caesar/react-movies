@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { MovieCardContainer, MovieCardTitle, MovieCardYear, MovieCardGenre, MovieCardButton } from "./style";
-import myImg from "../../images/filmItem.jpg";
+import myImg from "images/filmItem.jpg";
 
 function MovieCard({title, description, genre, year}) {
 	return (
@@ -10,7 +10,7 @@ function MovieCard({title, description, genre, year}) {
 			<MovieCardTitle>{title}</MovieCardTitle>
 			<MovieCardYear>{year}</MovieCardYear>
 			<MovieCardGenre>{genre}</MovieCardGenre>
-			<MovieCardButton>
+			<MovieCardButton >
 				<span></span>
 				<span></span>
 				<span></span>

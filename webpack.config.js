@@ -34,6 +34,7 @@ module.exports = {
         extensions: ['.js', '.json', '.css', '.scss', '.wasm'],
         alias: {
             ui: path.resolve(__dirname, 'src/ui/index'),
+            images: path.resolve(__dirname, 'src/images'),
         },
     },
     plugins: [

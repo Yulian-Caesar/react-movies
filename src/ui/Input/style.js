@@ -7,6 +7,7 @@ const InputContainer = styled.input`
     cursor: pointer;
     background: rgba(50, 50, 50, 0.8);
     color: white;
+    width: 100%;
 `
 
 export default InputContainer;
