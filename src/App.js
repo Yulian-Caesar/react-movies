@@ -1,13 +1,17 @@
 import React, { Component } from "react";
-import Button from './components/Button'
+import Header from './components/Header/index';
+import Main from "./components/Main/index";
+import Footer from './components/Footer/index';
+import { Logo } from "ui";
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <div>My react!</div>
-                <Button />
-            </div>
+            <>
+                <Header />
+                <Main />
+                <Footer />
+            </>
         );
     }
 }
