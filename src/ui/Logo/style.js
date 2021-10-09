@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Theme } from "ui";
+import { Colors } from "../index"
 
 const LogoContainer = styled.span`
-    color: ${Theme.colors.accent};
+    color: ${Colors.accent};
     font-size: 20px;
 `
 

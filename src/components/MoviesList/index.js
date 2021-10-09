@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import MovieCard from "../MovieCard/index";
 import { MoviesListContainer } from "./style";
 
-let movies = [
+let initialState = [
     {
         title: "Pulp Fiction",
         description: "Description",
@@ -48,6 +48,7 @@ let movies = [
 ]
 
 function MoviesList() {
+    const [movies, setMovies] = useState(initialState);
     return (
         <MoviesListContainer>
             {movies.map((movie) => (

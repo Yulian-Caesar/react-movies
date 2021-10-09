@@ -11,8 +11,8 @@ function Main() {
 			<MainNav>
 				<MainNavHeader>
 					<MainNavList>
-						{navList.map((item) => (
-							<li>{item}</li>
+						{navList.map((item, index) => (
+							<li key={index}>{item}</li>
 						))}
 					</MainNavList>
 					<MainNavFilter>
@@ -20,7 +20,7 @@ function Main() {
 						<MainNavFilterSelect>release date</MainNavFilterSelect>
 					</MainNavFilter>
 				</MainNavHeader>
-				<MainNavResult>39 movies found</MainNavResult>
+				<MainNavResult>333 movies found</MainNavResult>
 			</MainNav>
             <ErrorBoundary>
                 <MoviesList />

@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import {Colors} from "ui"
 
 export const MovieCardContainer = styled.div`
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -27,4 +29,29 @@ export const MovieCardGenre = styled.span`
     width: 100%;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 10px;
+`
+
+export const MovieCardButton = styled.button`
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: ${Colors.black};
+
+    span {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: ${Colors.white};
+    }
+
+    span + span {
+        margin-top: 2px;
+    }
 `
