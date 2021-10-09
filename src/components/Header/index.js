@@ -1,6 +1,7 @@
 import React from "react";
 import { HeaderContainer, HeaderTop, HeaderForm, HeaderTitle } from "./style"
 import { Button, Input, Logo, Modal, ModalAdd } from "ui";
+import MovieDetails from '../MovieDetails/index';
 
 
 function Header({ isPopupOpen, setIsPopupOpen }) {
@@ -10,6 +11,7 @@ function Header({ isPopupOpen, setIsPopupOpen }) {
 
 	return (
 		<HeaderContainer>
+			<MovieDetails />
 			<HeaderTop>
 				<Logo />
 				<Button onClick={showPopup} value="+ add movie" type="light" />

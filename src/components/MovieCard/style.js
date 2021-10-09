@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Colors} from "ui"
 
-export const MovieCardContainer = styled.div`
+export const MovieCardContainer = styled.button`
     position: relative;
     display: flex;
     flex-wrap: wrap;

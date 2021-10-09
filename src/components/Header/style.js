@@ -3,6 +3,7 @@ import { Colors } from "ui";
 import headerBg from '../../images/headerBg.jpg';
 
 export const HeaderContainer = styled.header`
+    position: relative;
     padding: 20px 55px 150px;
     margin-bottom: 10px;
     background-image: url(${headerBg});
