@@ -5,7 +5,7 @@ import { MainContainer, MainNav, MainNavResult, MainNavList, MainNavHeader, Main
 
 const navList = ['all', 'documentary', 'Comedy', 'Horror', 'crime'];
 
-function Main() {
+function Main(props) {
 	return (
 		<MainContainer>
 			<MainNav>
@@ -23,7 +23,7 @@ function Main() {
 				<MainNavResult>333 movies found</MainNavResult>
 			</MainNav>
             <ErrorBoundary>
-                <MoviesList />
+                <MoviesList listInfo={props.listInfo} handleClick={props.handleClick} />
             </ErrorBoundary>
 		</MainContainer>
 	);
