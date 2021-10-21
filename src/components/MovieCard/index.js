@@ -2,16 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { MovieCardContainer, MovieCardTitle, MovieCardYear, MovieCardGenre, MovieCardButton } from "./style";
 import myImg from "images/filmItem.jpg";
-import { useMovieDetailsToggle } from "../MovieDetails/MovieDetailsContext";
+import { useMovieDetailsToggle } from "../MovieDetails/MovieDetailsContext"
 
-function MovieCard({title, description, genre, year}) {
-	const toggle = useMovieDetailsToggle()
+function MovieCard({card}) {
+	const { handleClick } = useMovieDetailsToggle()
+	
 	return (
-		<MovieCardContainer onClick={toggle}>
+		<MovieCardContainer onClick={() => handleClick(card)}>
 			<img src={myImg}/>
-			<MovieCardTitle>{title}</MovieCardTitle>
-			<MovieCardYear>{year}</MovieCardYear>
-			<MovieCardGenre>{genre}</MovieCardGenre>
+			<MovieCardTitle>{card.title}</MovieCardTitle>
+			<MovieCardYear>{card.year}</MovieCardYear>
+			<MovieCardGenre>{card.genre}</MovieCardGenre>
 			<MovieCardButton >
 				<span></span>
 				<span></span>
