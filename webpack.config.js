@@ -41,6 +41,7 @@ module.exports = {
             images: path.resolve(__dirname, 'src/images'),
         },
     },
+    devtool: isDev ? 'source-map' : '',
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
