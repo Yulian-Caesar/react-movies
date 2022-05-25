@@ -5,7 +5,6 @@ const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
 module.exports = {
-    mode: 'development',
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, '/build'),
