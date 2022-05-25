@@ -1,16 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = !isDev;
+
 module.exports = {
+    mode: 'development',
     entry: './src/index.js',
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '/build'),
         filename: 'index_bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js)x?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -39,7 +43,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
         })
     ]
 };
