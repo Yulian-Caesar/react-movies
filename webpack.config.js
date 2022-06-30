@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
     entry: './src/index.js',
@@ -40,7 +40,7 @@ module.exports = {
             images: path.resolve(__dirname, 'src/images'),
         },
     },
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',

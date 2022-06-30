@@ -8,7 +8,7 @@ const App = () => {
     const [ isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <MovieDetailsProvider>
-            <Header isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />
+            <Header isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />    
             <Main />
             <Footer />
         </MovieDetailsProvider>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ModalCongrats() {
+const ModalCongrats = () => {
 	return (
 		<>
              <div>Yulik add movie</div>

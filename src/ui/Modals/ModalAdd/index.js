@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Textarea, InputDate, Select, Input } from 'ui';
 import { ModalTitle, ModalButtons, ModalRow, ModalRowItem, ModalRowTitle, ModalForm} from '../style';
 
-function ModalAdd() {
+const ModalAdd = () => {
 	return (
 		<>
 			<ModalTitle>ADD MOVIE</ModalTitle>
@@ -10,7 +10,7 @@ function ModalAdd() {
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>Title</ModalRowTitle>
-						<Input placeholder="Name Movie"/>
+						<Input type="text" placeholder="Name Movie"/>
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RELEASE DATE</ModalRowTitle>
@@ -20,21 +20,21 @@ function ModalAdd() {
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>movie url</ModalRowTitle>
-						<Input placeholder="https://"/>
+						<Input type="text" placeholder="https://"/>
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RATING</ModalRowTitle>
-						<Input placeholder="7.8"/>
+						<Input type="text" placeholder="7.8"/>
 					</ModalRowItem>
 				</ModalRow>
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>genre</ModalRowTitle>
-						<Select placeholder="Select Genre"/>
+						<Select placeholder="Select Genre" type="genre"/>
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RUNTIME</ModalRowTitle>
-						<Input placeholder="minutes" />
+						<Input type="text" placeholder="minutes" />
 					</ModalRowItem>
 				</ModalRow>
 				<ModalRow>

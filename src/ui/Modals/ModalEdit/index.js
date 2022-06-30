@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Textarea, InputDate, Select, Input } from 'ui';
 import { ModalTitle, ModalButtons, ModalRow, ModalRowItem, ModalRowTitle, ModalForm} from '../style';
 
-function ModalEdit() {
+const ModalEdit = () => {
 	return (
 		<>
 			<ModalTitle>Edit</ModalTitle>
@@ -10,7 +10,7 @@ function ModalEdit() {
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>Title</ModalRowTitle>
-						<Input placeholder="Name Movie" defaultValue="Moana"/>
+						<Input type="text" placeholder="Name Movie" defaultValue="Moana"/>
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RELEASE DATE</ModalRowTitle>
@@ -20,21 +20,21 @@ function ModalEdit() {
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>movie url</ModalRowTitle>
-						<Input placeholder="https://" defaultValue="https://www.moana.com" />
+						<Input type="text" placeholder="https://" defaultValue="https://www.moana.com" />
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RATING</ModalRowTitle>
-						<Input placeholder="7.8" defaultValue="7.6" />
+						<Input type="text" placeholder="7.8" defaultValue="7.6" />
 					</ModalRowItem>
 				</ModalRow>
 				<ModalRow>
 					<ModalRowItem>
 						<ModalRowTitle>genre</ModalRowTitle>
-						<Select placeholder="Select Genre"/>
+						<Select placeholder="Select Genre" type="genre"/>
 					</ModalRowItem>
 					<ModalRowItem>
 						<ModalRowTitle>RUNTIME</ModalRowTitle>
-						<Input placeholder="minutes" defaultValue="1h 47min" />
+						<Input type="text" placeholder="minutes" defaultValue="1h 47min" />
 					</ModalRowItem>
 				</ModalRow>
 				<ModalRow>

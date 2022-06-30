@@ -1,77 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import MovieCard from "../MovieCard/index";
 import { MoviesListContainer } from "./style";
+import { moviesFetchData } from "../../redux/actions"
+import { useSelector, useDispatch } from "react-redux"
+import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
 
-let initialState = [
-    {
-        title: "Pulp Fiction",
-        description: "Description",
-        id: "999",
-        genre: "Action & Adventure",
-        year: "2004",
-        runtime: "2h 34min",
-        rating: "7.8"
-    },
-    {
-        title: "Bohemian Rhapsody",
-        description: "Description",
-        id: "312123",
-        genre: "Drama, Biography, Music",
-        year: "2003",
-        runtime: "2h 34min",
-        rating: "7.8"
-    },
-    {
-        title: "Kill Bill: Vol 2",
-        description: "Description",
-        id: "432",
-        genre: "Oscar winning Movie",
-        year: "1994",
-        runtime: "2h 34min",
-        rating: "7.8"
-    },
-    {
-        title: "Avengers: War of Infinity",
-        description: "Description",
-        id: "5665",
-        genre: "Action & Adventure",
-        year: "2004",
-        runtime: "2h 34min",
-        rating: "7.8"
-    },
-    {
-        title: "Inception",
-        description: "Description",
-        id: "88",
-        genre: "Action & Adventure",
-        year: "2003",
-        runtime: "2h 34min",
-        rating: "7.8"
-    },
-    {
-        title: "Reservoir dogs",
-        description: "Description",
-        id: "34",
-        genre: "Oscar winning Movie",
-        year: "1994",
-        runtime: "2h 34min",
-        rating: "7.8"
+
+const MoviesList = () => {
+    const dispatch = useDispatch();
+    const movieDetails = useMovieDetails();
+    const stateMovies = useSelector(state => state.movies)
+    
+    useEffect(() => {
+        dispatch(moviesFetchData())
+    }, [])
+
+    if(!stateMovies.length) {
+        return <p>Don't have a film</p>
     }
-]
-
-function MoviesList() {
-    const [movies, setMovies] = useState(initialState);
+    
     return (
         <MoviesListContainer>
-            {movies.map((movie) => (
+            {stateMovies && stateMovies.map((movie) => (
                 <MovieCard
+                    onClick={() => movieDetails.setVisiblePopup(movie)}
                     title={movie.title}
-                    genre={movie.genre}
-                    year={movie.year}
-                    description={movie.description}
+                    genres={movie.genres}
+                    year={movie.release_date}
+                    description={movie.overview}
                     runtime={movie.runtime}
-                    rating={movie.rating}
+                    rating={movie.vote_average}
+                    imagePath={movie.poster_path}
                     key={movie.id}
+                    id={movie.id}
                 />
             ))}
         </MoviesListContainer>
