@@ -23,7 +23,7 @@ MovieCard.propTypes = {
 	title: PropTypes.string.isRequired,
 	genres: PropTypes.array.isRequired,
 	year: PropTypes.string.isRequired,
-	imagePath: PropTypes.string.isRequired
+	imagePath: PropTypes.string
 }
 
 export default MovieCard;

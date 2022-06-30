@@ -6,6 +6,8 @@ import { MovieDetailsProvider } from './components/MovieDetails/MovieDetailsCont
 
 const App = () => {
     const [ isPopupOpen, setIsPopupOpen] = useState(false);
+
+
     return (
         <MovieDetailsProvider>
             <Header isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />    
