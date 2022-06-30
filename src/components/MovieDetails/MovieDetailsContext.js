@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-
 const MovieDetailsContext = React.createContext();
 
 export const useMovieDetails = () => {

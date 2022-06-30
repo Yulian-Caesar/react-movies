@@ -5,7 +5,6 @@ import { moviesFetchData } from "../../redux/actions"
 import { useSelector, useDispatch } from "react-redux"
 import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
 
-
 const MoviesList = () => {
     const dispatch = useDispatch();
     const movieDetails = useMovieDetails();
