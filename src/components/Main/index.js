@@ -31,6 +31,10 @@ const Main = () => {
 		dispatch(moviesFetchData(`?searchBy=genres&filter=${filterGenre}`))
 	}
 
+<<<<<<< home-task-6
+=======
+function Main(props) {
+>>>>>>> master
 	return (
 		<MainContainer>
 			<MainNav>
@@ -51,7 +55,11 @@ const Main = () => {
 				<MainNavResult>{stateMovies.length} movies found</MainNavResult>
 			</MainNav>
             <ErrorBoundary>
+<<<<<<< home-task-6
                 <MoviesList  />
+=======
+                <MoviesList listInfo={props.listInfo} handleClick={props.handleClick} />
+>>>>>>> master
             </ErrorBoundary>
 		</MainContainer>
 	);

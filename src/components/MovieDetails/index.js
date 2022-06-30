@@ -5,7 +5,7 @@ import { Logo } from "ui"
 
 const MovieDetails = () => {
     const movieDetails = useMovieDetails()
-	const { currentEl, isVisiblePopup } = movieDetails;
+	  const { currentEl, isVisiblePopup } = movieDetails;
 	
     if (!movieDetails) return null
 

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
 
 
+<<<<<<< home-task-6
 const MoviesList = () => {
     const dispatch = useDispatch();
     const movieDetails = useMovieDetails();
@@ -22,6 +23,13 @@ const MoviesList = () => {
     return (
         <MoviesListContainer>
             {stateMovies && stateMovies.map((movie) => (
+=======
+function MoviesList(props) {    
+
+    return (
+        <MoviesListContainer>
+            {(props.listInfo).map((movie) => (
+>>>>>>> master
                 <MovieCard
                     onClick={() => movieDetails.setVisiblePopup(movie)}
                     title={movie.title}
@@ -33,6 +41,11 @@ const MoviesList = () => {
                     imagePath={movie.poster_path}
                     key={movie.id}
                     id={movie.id}
+<<<<<<< home-task-6
+=======
+                    handleClick={props.handleClick}
+                    card={movie}
+>>>>>>> master
                 />
             ))}
         </MoviesListContainer>
