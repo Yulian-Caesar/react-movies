@@ -39,7 +39,12 @@ export const MovieDetailsRow = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    flex-wrap: nowrap;
     margin-bottom: 30px;
+
+    ${props => props.type === 'mb-0' && `
+        margin-bottom: 0
+    `}
 `
 
 export const MovieDetailsTitle = styled.h3`
@@ -62,12 +67,17 @@ export const MovieDetailsRating = styled.span`
     margin-left: 25px;
 `
 
-export const MovieDetailsGenre = styled.span`
+export const MovieDetailsGenre = styled.ul`
+    display: flex;
     width: 100%;
     font-size: 14px;
     margin-top: 10px;
     color: ${Colors.white};
     opacity: 0.5;
+
+    li + li {
+        margin-left: 5px;
+    }
 `
 
 export const MovieDetailsYear = styled.span`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Colors } from "ui";
 
 export const MainContainer = styled.main`
     background: #232323;
@@ -7,14 +8,15 @@ export const MainContainer = styled.main`
 
 export const MainNav = styled.div`
     font-size: 16px;
-    color: #FFFFFF;
+    color: ${Colors.white};
     margin-bottom: 25px;
 `
 export const MainNavHeader = styled.div`
     display: flex;
+    align-items: center;
     justify-content: space-between;
     text-transform: uppercase;
-    border-bottom: 1px solid #080707;
+    border-bottom: 2px solid ${Colors.greyDark}; 
     padding: 20px 0;
     margin-bottom: 25px;
 `
@@ -22,31 +24,42 @@ export const MainNavHeader = styled.div`
 export const MainNavList = styled.ul`
     display: flex;
 
+    li {
+        cursor: pointer;
+        position: relative;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -43.5px;
+            width: 100%;
+            height: 0px;
+            background-color: ${Colors.accent}; 
+        }
+
+        &.active {
+            &:before {
+                height: 2px;
+            }
+        }
+    }
+
     li + li {
         margin-left: 30px;
     }
 `
 
 export const MainNavFilter = styled.div`
+    display: flex;
+    align-items: center;
     color: rgba(255, 255, 255, 0.6);
-`
 
-export const MainNavFilterSelect = styled.span`
-    position: relative;
-    margin-left: 35px;
-    color: rgba(255, 255, 255, 1);
-    padding-right: 35px;
-
-    &:after {
-        content: '';
-        position: absolute;
-        right: 10px;
-        top: 65%;
-        transform: translate(0, -50%);
-        border: 6px solid transparent;
-        border-top: 8px solid #F65261;
+    span {
+        margin-right: 30px;
     }
 `
+
 
 export const MainNavResult = styled.span`
     font-size: 20px;

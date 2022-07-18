@@ -1,16 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '/build'),
         filename: 'index_bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js)x?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -37,9 +40,13 @@ module.exports = {
             images: path.resolve(__dirname, 'src/images'),
         },
     },
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            minify: {
+                collapseWhitespace: isProd
+            }
         })
     ]
 };

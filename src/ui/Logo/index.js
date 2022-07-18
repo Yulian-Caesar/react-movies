@@ -1,7 +1,8 @@
 import React from "react";
 import LogoContainer from "./style";
 
-function Logo() {
+const Logo = () => {
+
 	return (
 		<LogoContainer>
             <b>netflix</b>roulette

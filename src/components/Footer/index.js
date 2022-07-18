@@ -2,7 +2,8 @@ import React from "react";
 import { FooterContainer } from "./style";
 import { Logo } from "ui";
 
-function Footer(props) {
+const Footer = () => {
+
 	return (
 		<FooterContainer>
 			<Logo />

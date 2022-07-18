@@ -1,40 +1,29 @@
 import React, { useState, useContext } from "react";
+const MovieDetailsContext = React.createContext();
 
-const MovieDetailsToggleContext = React.createContext();
-
-export const useMovieDetailsToggle = () => {
-    return useContext(MovieDetailsToggleContext)
+export const useMovieDetails = () => {
+    return useContext(MovieDetailsContext)
 }
 
 export const MovieDetailsProvider = ({ children }) => {
-    const [ movieDetails, setMovieDetails ] = useState(false);
+    const [ isMovieDetailsOpen, setIsMovieDetailsOpen ] = useState(false)
+    const [ currentEl, setCurrentEl ] = useState()
 
-    const toggle = () => {
-        setMovieDetails(!movieDetails)
+    const setVisiblePopup = (currMovie) => {
+        setCurrentEl(currMovie)
+        if (isMovieDetailsOpen === false) {
+            setIsMovieDetailsOpen(true)
+        }
+        if (isMovieDetailsOpen === true && currMovie.id === currentEl.id) {
+            setIsMovieDetailsOpen(false)
+        }
     }
 
-    const [activeItem, setActiveItem] = useState({
-        title: "",
-        description: "",
-        id: "",
-        genre: "",
-        year: "",
-        runtime: "",
-        rating: ""
-    })
-
-    const handleClick = (card) => {
-        toggle()
-        setActiveItem(card)
-    }
-
-    const value = {
-        handleClick, toggle, activeItem, movieDetails
-    }
+    const value = {isMovieDetailsOpen, setVisiblePopup, currentEl, setCurrentEl}
 
     return (
-        <MovieDetailsToggleContext.Provider value={ value }>
+        <MovieDetailsContext.Provider value={value} >
             {children}
-        </MovieDetailsToggleContext.Provider>
+        </MovieDetailsContext.Provider>
     )
 }

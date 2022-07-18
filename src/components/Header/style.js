@@ -4,7 +4,6 @@ import headerBg from '../../images/headerBg.jpg';
 
 export const HeaderContainer = styled.header`
     position: relative;
-    padding: 20px 55px 150px;
     margin-bottom: 10px;
     background-image: url(${headerBg});
 
@@ -15,6 +14,14 @@ export const HeaderContainer = styled.header`
     button {
         grid-area: button;
     }
+
+    ${props => props.type === 'header' && `
+        padding: 20px 55px 150px;
+    `}
+
+    ${props => props.type === 'movieDetails' && `
+        padding: 0;
+    `}
 `
 
 export const HeaderTop = styled.div`

@@ -1,24 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import MovieCard from "../MovieCard/index";
 import { MoviesListContainer } from "./style";
+import { moviesFetchData } from "../../redux/actions"
+import { useSelector, useDispatch } from "react-redux"
+import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
 
+const MoviesList = () => {
+    const dispatch = useDispatch();
+    const movieDetails = useMovieDetails();
+    const stateMovies = useSelector(state => state.movies)
+    
+    useEffect(() => {
+        dispatch(moviesFetchData())
+    }, [])
 
-function MoviesList(props) {    
-
+    if(!stateMovies.length) {
+        return <p>Don't have a film</p>
+    }
+    
     return (
         <MoviesListContainer>
-            {(props.listInfo).map((movie) => (
+            {stateMovies && stateMovies.map((movie) => (
                 <MovieCard
+                    onClick={() => movieDetails.setVisiblePopup(movie)}
                     title={movie.title}
-                    genre={movie.genre}
-                    year={movie.year}
-                    description={movie.description}
+                    genres={movie.genres}
+                    year={movie.release_date}
+                    description={movie.overview}
                     runtime={movie.runtime}
-                    rating={movie.rating}
+                    rating={movie.vote_average}
+                    imagePath={movie.poster_path}
                     key={movie.id}
                     id={movie.id}
-                    handleClick={props.handleClick}
-                    card={movie}
                 />
             ))}
         </MoviesListContainer>
