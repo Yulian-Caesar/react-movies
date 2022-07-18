@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "ui";
+import styled from 'styled-components';
+import { Colors } from 'ui';
 import closeButton from 'images/search.svg';
 
 export const MovieDetailsContainer = styled.div`

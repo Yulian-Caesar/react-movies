@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "../index"
+import styled from 'styled-components';
+import { Colors } from '../index'
 
 const LogoContainer = styled.span`
     color: ${Colors.accent};

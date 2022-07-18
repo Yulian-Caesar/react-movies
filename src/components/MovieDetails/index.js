@@ -1,11 +1,11 @@
-import React from "react";
-import { MovieDetailsContainer, MovieDetailsClose, MovieDetailsHeader, MovieDetailsMain, MovieDetailsInfo, MovieDetailsRow, MovieDetailsDescription, MovieDetailsTitle, MovieDetailsRating, MovieDetailsGenre, MovieDetailsYear, MovieDetailsRuntime } from "./style"
-import { useMovieDetails } from "./MovieDetailsContext";
-import { Logo } from "ui"
+import React from 'react';
+import { MovieDetailsContainer, MovieDetailsClose, MovieDetailsHeader, MovieDetailsMain, MovieDetailsInfo, MovieDetailsRow, MovieDetailsDescription, MovieDetailsTitle, MovieDetailsRating, MovieDetailsGenre, MovieDetailsYear, MovieDetailsRuntime } from './style'
+import { useMovieDetails } from './MovieDetailsContext';
+import { Logo } from 'ui'
 
 const MovieDetails = () => {
     const movieDetails = useMovieDetails()
-	  const { currentEl, isVisiblePopup } = movieDetails;
+	const { currentEl, setIsMovieDetailsOpen } = movieDetails;
 	
     if (!movieDetails) return null
 
@@ -13,10 +13,10 @@ const MovieDetails = () => {
 		<MovieDetailsContainer >
 			<MovieDetailsHeader>
 				<Logo />
-				<MovieDetailsClose onClick={() => isVisiblePopup(false)} />
+				<MovieDetailsClose onClick={() => setIsMovieDetailsOpen(false)} />
 			</MovieDetailsHeader>
 			<MovieDetailsMain>
-				<img className="img" src={currentEl.poster_path}/>
+				<img className='img' src={currentEl.poster_path}/>
 				<MovieDetailsInfo>
 					<MovieDetailsRow type={'mb-0'}>
 						<MovieDetailsTitle>{currentEl.title}</MovieDetailsTitle>

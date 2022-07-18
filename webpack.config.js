@@ -38,6 +38,7 @@ module.exports = {
         alias: {
             ui: path.resolve(__dirname, 'src/ui/index'),
             images: path.resolve(__dirname, 'src/images'),
+            constants: path.resolve(__dirname, 'src/constants/index'),
         },
     },
     devtool: isDev ? 'source-map' : false,

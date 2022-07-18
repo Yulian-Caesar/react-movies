@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "../index"
+import styled from 'styled-components';
+import { Colors } from '../index'
 
 const ButtonContainer = styled.button`
     border-radius: 4px;
@@ -9,19 +9,19 @@ const ButtonContainer = styled.button`
     cursor: pointer;
     border: 2px solid;
 
-    ${props => props.type === 'default' && `
+    ${props => props.kind === 'default' && `
         background: ${Colors.accent};
         color: ${Colors.white};
         border-color: ${Colors.accent};
     `}
 
-    ${props => props.type === 'outline' && `
+    ${props => props.kind === 'outline' && `
         background: ${Colors.black};
         color: ${Colors.accent};
         border-color: ${Colors.accent};
     `}
 
-    ${props => props.type === 'light' && `
+    ${props => props.kind === 'light' && `
         background: #d6d6d6;
         color: ${Colors.accent};
         border-color: #d6d6d6;

@@ -1,6 +1,6 @@
-import React from "react";
-import { FooterContainer } from "./style";
-import { Logo } from "ui";
+import React from 'react';
+import { FooterContainer } from './style';
+import { Logo } from 'ui';
 
 const Footer = () => {
 

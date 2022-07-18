@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext } from 'react';
 const MovieDetailsContext = React.createContext();
 
 export const useMovieDetails = () => {
@@ -19,7 +19,7 @@ export const MovieDetailsProvider = ({ children }) => {
         }
     }
 
-    const value = {isMovieDetailsOpen, setVisiblePopup, currentEl, setCurrentEl}
+    const value = {isMovieDetailsOpen, setVisiblePopup, currentEl, setCurrentEl, setIsMovieDetailsOpen}
 
     return (
         <MovieDetailsContext.Provider value={value} >

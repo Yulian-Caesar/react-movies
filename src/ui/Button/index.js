@@ -1,18 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ButtonContainer from "./style";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ButtonContainer from './style';
 
-const Button = ({value, type, onClick}) => {
+const Button = ({value, kind, onClick}) => {
 	return (
-		<ButtonContainer type={type} onClick={onClick}>
+		<ButtonContainer kind={kind} onClick={onClick}>
 			{value}
 		</ButtonContainer>
 	);
 }
 
 Button.propTypes = {
-	type: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
+	kind: PropTypes.string.isRequired,
+	onClick: PropTypes.func
 }
 
 export default Button;

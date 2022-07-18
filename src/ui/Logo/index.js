@@ -1,5 +1,5 @@
-import React from "react";
-import LogoContainer from "./style";
+import React from 'react';
+import LogoContainer from './style';
 
 const Logo = () => {
 
