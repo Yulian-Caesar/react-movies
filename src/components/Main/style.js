@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "ui";
+import styled from 'styled-components';
+import { Colors } from 'ui';
 
 export const MainContainer = styled.main`
     background: #232323;
@@ -29,7 +29,7 @@ export const MainNavList = styled.ul`
         position: relative;
         
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             bottom: -43.5px;

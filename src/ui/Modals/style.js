@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "ui";
+import styled from 'styled-components';
+import { Colors } from 'ui';
 
 export const ModalTitle = styled.h3`
     font-size: 40px;
@@ -40,10 +40,6 @@ export const ModalRowTitle = styled.div`
     color: ${Colors.accent};
     text-transform: uppercase;
     margin-bottom: 13px;
-`
-
-export const ModalForm = styled.form`
-    
 `
 
 export const ModalCloseButton = styled.button`

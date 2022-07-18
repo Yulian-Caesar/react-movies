@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import MovieCard from "../MovieCard/index";
-import { MoviesListContainer } from "./style";
-import { moviesFetchData } from "../../redux/actions"
-import { useSelector, useDispatch } from "react-redux"
-import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
+import React, { useEffect } from 'react';
+import MovieCard from '../MovieCard/index';
+import { MoviesListContainer } from './style';
+import { moviesFetchData } from '../../redux/actions'
+import { useSelector, useDispatch } from 'react-redux'
+import { useMovieDetails } from '../MovieDetails/MovieDetailsContext';
 
 const MoviesList = () => {
     const dispatch = useDispatch();
@@ -24,14 +24,11 @@ const MoviesList = () => {
                 <MovieCard
                     onClick={() => movieDetails.setVisiblePopup(movie)}
                     title={movie.title}
+                    release_date={movie.release_date}
+                    poster_path={movie.poster_path}
                     genres={movie.genres}
-                    year={movie.release_date}
-                    description={movie.overview}
-                    runtime={movie.runtime}
-                    rating={movie.vote_average}
-                    imagePath={movie.poster_path}
                     key={movie.id}
-                    id={movie.id}
+                    cardData={movie}
                 />
             ))}
         </MoviesListContainer>

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "ui";
+import styled from 'styled-components';
+import { Colors } from 'ui';
 import headerBg from '../../images/headerBg.jpg';
 
 export const HeaderContainer = styled.header`
@@ -43,6 +43,6 @@ export const HeaderForm = styled.div`
     grid-gap: 35px 20px;
     grid-template-columns: 25fr 25fr 25fr 25fr;
     grid-template-areas: 
-        "title title title title"
-        "input input input button"
+        'title title title title'
+        'input input input button'
 `

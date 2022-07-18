@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { default as ModalContainer } from 'react-modal';
 import { Colors } from 'ui';
 import { ModalCloseButton } from '../style';
@@ -30,17 +30,17 @@ ModalContainer.setAppElement('body');
 
 const Modal = ({ isPopupOpen, setIsPopupOpen, children }) => {
 
-    const closeModal = () => setIsPopupOpen(!isPopupOpen);
+    // const closeModal = () => setIsPopupOpen(!isPopupOpen);
     
 
     return (
         <>  
             <ModalContainer
                 isOpen={isPopupOpen}
-                onRequestClose={closeModal}
+                // onRequestClose={closeModal}
                 style={customStyles}
             >
-                <ModalCloseButton onClick={closeModal}>X</ModalCloseButton>
+                <ModalCloseButton onClick={() => setIsPopupOpen(!isPopupOpen)}>X</ModalCloseButton>
                 {children}
             </ModalContainer>
         </>
@@ -50,6 +50,7 @@ const Modal = ({ isPopupOpen, setIsPopupOpen, children }) => {
 Modal.propTypes = {
 	children: PropTypes.object.isRequired,
     isPopupOpen: PropTypes.bool.isRequired,
+    setIsPopupOpen: PropTypes.func.isRequired
 }
 
 export default Modal;

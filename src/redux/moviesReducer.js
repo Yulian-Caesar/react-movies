@@ -1,4 +1,4 @@
-import { MOVIES_FETCH_DATA_SUCCESS } from "./types"
+import { MOVIES_FETCH_DATA_SUCCESS } from './types'
 
 
 export const moviesReducer = (state = [], action) => {

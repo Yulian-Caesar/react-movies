@@ -1,16 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { HeaderContainer, HeaderTop, HeaderForm, HeaderTitle } from "./style"
-import { Button, Input, Logo, Modal, ModalAdd } from "ui";
+import React, { useState } from 'react';
+import { HeaderContainer, HeaderTop, HeaderForm, HeaderTitle } from './style'
+import { Button, Logo, Modal, ModalAddOrEdit } from 'ui';
 import MovieDetails from '../MovieDetails/index';
-import { useMovieDetails } from "../MovieDetails/MovieDetailsContext";
+import { useMovieDetails } from '../MovieDetails/MovieDetailsContext';
 
-const Header = ({ isPopupOpen, setIsPopupOpen }) => {
+const Header = () => {
+	const [ isPopupOpen, setIsPopupOpen] = useState(false);
 	const movieDetails = useMovieDetails()
 
-	const showPopup = () => {
-		setIsPopupOpen(!isPopupOpen)
-	}
 
 	if(movieDetails.isMovieDetailsOpen == true) {
 		return (
@@ -23,23 +20,26 @@ const Header = ({ isPopupOpen, setIsPopupOpen }) => {
 		<HeaderContainer type={'header'}>
 			<HeaderTop>
 				<Logo />
-				<Button onClick={showPopup} value="+ add movie" type="light" />
+				<Button onClick={() => setIsPopupOpen(!isPopupOpen)} value='+ add movie' kind='light' />
 				<Modal isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen}>
-					<ModalAdd />
+					<ModalAddOrEdit 
+						isPopupOpen={isPopupOpen} 
+						setIsPopupOpen={setIsPopupOpen} 
+						modalTitle='Add movie'
+						methodType='POST'
+						cardData
+					/>
 				</Modal>
 			</HeaderTop>
 			<HeaderForm>
 				<HeaderTitle>FIND YOUR MOViE</HeaderTitle>
-				<Input type="text" placeholder="What do you want to watch?"></Input>
-				<Button type="default" value="Search"/>
+				{/* <Input type='text' placeholder='What do you want to watch?'></Input> */}
+				<input type='text' placeholder='What do you want to watch?'></input>
+				<Button kind='default' value='Search'/>
 			</HeaderForm>
 		</HeaderContainer>
 	)
 }
 
-Header.propTypes = {
-	isPopupOpen: PropTypes.bool.isRequired,
-	setIsPopupOpen: PropTypes.func.isRequired
-}
 
 export default Header;

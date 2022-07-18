@@ -1,10 +1,9 @@
+import  Select, { components } from 'react-select';
+import { useField, ErrorMessage } from 'formik';
 import React from 'react';
-import PropTypes from 'prop-types';
-import { default as SelectContainer, components } from 'react-select';
+import { LabelContainer, ErrorText } from './Style';
 import { Colors } from 'ui';
-import ImgArrow from 'images/arrow.svg';
-import { GENRES_SORT_BY } from 'constants'
-
+import ImgArrow from '../../images/arrow.svg';
 
 const selectStyles = {
 	option: base => ({
@@ -54,31 +53,29 @@ const DropdownIndicator = props => {
 	);
 };
 
+export default function SelectField(props) {
+	const [field, state, { setValue, setTouched }] = useField(
+		props.field.name
+	);
 
-const Select = ({ placeholder = 'placeholder', type, onChange}) => {
+	const onChange = (value) => {
+		setValue(value);
+	};
 
-	if(type === 'sortBy') {
-		return (
-			<SelectContainer
+	return (
+		<>
+			{props.label ? <LabelContainer htmlFor={props.name}>{props.label}</LabelContainer> : null }
+			<Select
+				{...props}
+				value={state?.value}
+				isMulti
 				components={{ DropdownIndicator }}
-				type='checkbox'
+				name={props.name}
 				styles={selectStyles}
-				options={GENRES_SORT_BY}
-				defaultValue={ {value: 'release_date', label: 'Release date'} }
-				removeSelected={false}
-				placeholder={placeholder}
-				type={type}
+				id={props.name}
+				label={props.label}
 				onChange={onChange}
-			>
-			</SelectContainer>
-		);
-	}
-	
+			/>            
+		</>
+	);
 }
-
-Select.propTypes = {
-	placeholder: PropTypes.string,
-    type: PropTypes.string,
-}
-
-export default Select;
