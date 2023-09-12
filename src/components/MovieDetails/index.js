@@ -1,13 +1,15 @@
 import React from 'react';
 import { MovieDetailsContainer, MovieDetailsClose, MovieDetailsHeader, MovieDetailsMain, MovieDetailsInfo, MovieDetailsRow, MovieDetailsDescription, MovieDetailsTitle, MovieDetailsRating, MovieDetailsGenre, MovieDetailsYear, MovieDetailsRuntime } from './style'
 import { useMovieDetails } from './MovieDetailsContext';
-import { Logo } from 'ui'
+import { Logo } from 'ui';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 const MovieDetails = () => {
     const movieDetails = useMovieDetails()
 	const { currentEl, setIsMovieDetailsOpen } = movieDetails;
+	// console.log(movieDetails.currentEl)
 	
-    if (!movieDetails) return null
+    if (!movieDetails) return null;
 
 	return (
 		<MovieDetailsContainer >

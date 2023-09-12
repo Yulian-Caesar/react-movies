@@ -41,6 +41,9 @@ module.exports = {
             constants: path.resolve(__dirname, 'src/constants/index'),
         },
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     devtool: isDev ? 'source-map' : false,
     plugins: [
         new HtmlWebpackPlugin({

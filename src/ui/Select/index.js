@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { default as SelectContainer, components } from 'react-select';
 import { Colors } from 'ui';
 import ImgArrow from 'images/arrow.svg';
-import { GENRES_SORT_BY } from 'constants'
+import { GENRES_SORT_BY } from 'constants';
+import { Link } from 'react-router-dom';
 
 
 const selectStyles = {

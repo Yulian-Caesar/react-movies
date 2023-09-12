@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { MovieCardContainer, MovieCardTitle, MovieCardYear, MovieCardGenre, MovieCardButton, MovieCardImg, MovieCardMenuBox, MovieCardButtonClose, MovieCardMenu } from './style';
 import { Modal, ModalDelete, ModalAddOrEdit } from 'ui';
+import { Link } from 'react-router-dom';
+import { useMoviesList } from '../MoviesList/MoviesListContext';
 
-const MovieCard = ({ onClick, title, poster_path, release_date, genres, cardData }) => {
+const MovieCard = ({ onClick, title, poster_path, release_date, genres, cardData, id }) => {
 	const [ movieCardMenu, setMovieCardMenu ] = useState(false);
 	const [ isPopupOpen, setIsPopupOpen] = useState(false);
 	const [ isPopupAddOpen, setIsPopupAddOpen] = useState(false);
@@ -15,7 +17,7 @@ const MovieCard = ({ onClick, title, poster_path, release_date, genres, cardData
 	}
 
 	return (
-		<MovieCardContainer>
+		<Link to={`/search/${id}`}>
 			<MovieCardImg onClick={onClick}><img src={poster_path} /></MovieCardImg>
 			<MovieCardTitle onClick={onClick}>{title}</MovieCardTitle>
 			<MovieCardYear>{release_date}</MovieCardYear>
@@ -60,7 +62,7 @@ const MovieCard = ({ onClick, title, poster_path, release_date, genres, cardData
 					methodType='DELETE'
 				/>
 			</Modal>
-		</MovieCardContainer>
+		</Link>
 	);
 }
 
